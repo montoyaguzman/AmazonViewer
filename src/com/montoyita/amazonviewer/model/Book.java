@@ -2,63 +2,22 @@ package com.montoyita.amazonviewer.model;
 
 import java.util.Date;
 
-public class Book {
+import com.montoyita.amazonviewer.dao.IVisualizable;
+
+public class Book extends Publication implements IVisualizable {
 	
 	private int id;
-	private String title;
-	private Date date;
-	private String editorial;
-	private String authors[];
 	private String isbn;
-	private boolean readed;
-	private int timeReaded;
+	private String authors[];
 	
-	public Book(String title, Date date, String editorial, String isbn) {
-		super();
-		this.title = title;
-		this.date = date;
-		this.editorial = editorial;
+	public Book(String title, Date date, String editorial, boolean readed, int timeReaded, String isbn, String authors[]) {
+		super(title, date, editorial, readed, timeReaded);
 		this.isbn = isbn;
+		this.authors = authors;
 	}
 
 	public int getId() {
 		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
-	}
-
-	public String getEditorial() {
-		return editorial;
-	}
-
-	public void setEditorial(String editorial) {
-		this.editorial = editorial;
-	}
-
-	public String[] getAuthors() {
-		return authors;
-	}
-
-	public void setAuthors(String[] authors) {
-		this.authors = authors;
 	}
 
 	public String getIsbn() {
@@ -69,21 +28,31 @@ public class Book {
 		this.isbn = isbn;
 	}
 
-	public boolean isReaded() {
-		return readed;
+	public String[] getAuthors() {
+		return authors;
 	}
 
-	public void setReaded(boolean readed) {
-		this.readed = readed;
+	public void setAuthors(String[] authors) {
+		this.authors = authors;
 	}
 
-	public int getTimeReaded() {
-		return timeReaded;
+	@Override
+	public Date startToSee(Date date1) {
+		// TODO Auto-generated method stub
+		return date1;
 	}
 
-	public void setTimeReaded(int timeReaded) {
-		this.timeReaded = timeReaded;
+	@Override
+	public void stopToSee(Date initDate, Date finishDate) {
+		// TODO Auto-generated method stub
+		if (finishDate.getSeconds() > initDate.getSeconds()) {
+			setTimeReaded(finishDate.getSeconds() - initDate.getSeconds());
+		} else {
+			setTimeReaded(0);;
+		}
 	}
+	
+	
 	
 	
 	

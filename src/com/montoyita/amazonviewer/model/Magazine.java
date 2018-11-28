@@ -2,61 +2,28 @@ package com.montoyita.amazonviewer.model;
 
 import java.util.Date;
 
-public class Magazine {
+public class Magazine extends Publication {
 	
 	private int id;
-	private String title;
-	private Date editionDate;
-	private String editorial;
-	private String authors[];
+	private String writer;
 	
-	public Magazine(String title, Date editionDate, String editorial) {
-		super();
-		this.title = title;
-		this.editionDate = editionDate;
-		this.editorial = editorial;
+	public Magazine(String title, Date date, String editorial, boolean readed, int timeReaded, String writer) {
+		super(title, date, editorial, readed, timeReaded);
+		this.writer = writer;
 	}
 
 	public int getId() {
 		return id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public String getWriter() {
+		return writer;
 	}
 
-	public String getTitle() {
-		return title;
+	public void setWriter(String writer) {
+		this.writer = writer;
 	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public Date getEditionDate() {
-		return editionDate;
-	}
-
-	public void setEditionDate(Date editionDate) {
-		this.editionDate = editionDate;
-	}
-
-	public String getEditorial() {
-		return editorial;
-	}
-
-	public void setEditorial(String editorial) {
-		this.editorial = editorial;
-	}
-
-	public String[] getAuthors() {
-		return authors;
-	}
-
-	public void setAuthors(String[] authors) {
-		this.authors = authors;
-	}
-	
+		
 	
 	
 }

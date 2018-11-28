@@ -1,67 +1,25 @@
 package com.montoyita.amazonviewer.model;
 
-public class Chapter {
+public class Chapter extends Movie {
 	
 	private int id;
-	private String title;
-	private int duration;
-	private short year;
-	private boolean viewed;
-	private int timeViewed;
+	private int sessionNumber;
 	
-	public Chapter(String title, int duration, short year) {
-		super();
-		this.title = title;
-		this.duration = duration;
-		this.year = year;
+	public Chapter(String title, String genre, String creator, int duration, short year, int sessionNumber) {
+		super(title, genre, creator, duration, year);
+		this.setSessionNumber(sessionNumber);
+	}
+	
+	public int getId(){
+		return this.id;
+	}
+	
+	public int getSessionNumber() {
+		return sessionNumber;
 	}
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public int getDuration() {
-		return duration;
-	}
-
-	public void setDuration(int duration) {
-		this.duration = duration;
-	}
-
-	public short getYear() {
-		return year;
-	}
-
-	public void setYear(short year) {
-		this.year = year;
-	}
-
-	public boolean isViewed() {
-		return viewed;
-	}
-
-	public void setViewed(boolean viewed) {
-		this.viewed = viewed;
-	}
-
-	public int getTimeViewed() {
-		return timeViewed;
-	}
-
-	public void setTimeViewed(int timeViewed) {
-		this.timeViewed = timeViewed;
+	public void setSessionNumber(int sessionNumber) {
+		this.sessionNumber = sessionNumber;
 	}
 	
 	

@@ -7,8 +7,10 @@ import com.montoyita.amazonviewer.model.Movie;
 public class Entrada {
 
 	public static void main(String args[]) {
-		Movie movie = new Movie("Coco", "Animaco", (short)2017);
+		Movie movie = new Movie("Coco", "Animacion", "Lee Unkrich", 120, (short)2017);
+		boolean a = true;
 		System.out.println(movie.toString());
+		System.out.println(movie.toString(a));
 		// showMenu();
 	}
 	
