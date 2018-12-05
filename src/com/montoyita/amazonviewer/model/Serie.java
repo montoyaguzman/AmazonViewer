@@ -1,14 +1,19 @@
 package com.montoyita.amazonviewer.model;
 
+import java.util.ArrayList;
+
 public class Serie extends Film {
 	
 	private int id;
 	private int sessionQuantity;
-	private Chapter chapters[];
+	private ArrayList<Chapter> chapters;
 	
 	public Serie(String title, String genre, String creator, int duration, int sessionQuantity) {
 		super(title, genre, creator, duration);
 		this.sessionQuantity = sessionQuantity;
+	}
+	
+	public Serie() {
 	}
 	
 	public int getId() {
@@ -23,11 +28,11 @@ public class Serie extends Film {
 		this.sessionQuantity = sessionQuantity;
 	}
 
-	public Chapter[] getChapters() {
+	public ArrayList<Chapter> getChapters() {
 		return chapters;
 	}
 
-	public void setChapters(Chapter[] chapters) {
+	public void setChapters(ArrayList<Chapter> chapters) {
 		this.chapters = chapters;
 	}
 	

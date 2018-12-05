@@ -18,6 +18,10 @@ public class Publication {
 		this.readed = readed;
 		this.timeReaded = timeReaded;
 	}
+	
+	public Publication() {
+		
+	}
 
 	public String getTitle() {
 		return title;

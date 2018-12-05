@@ -1,5 +1,6 @@
 package com.montoyita.amazonviewer.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import com.montoyita.amazonviewer.dao.IVisualizable;
@@ -14,6 +15,9 @@ public class Movie extends Film implements IVisualizable{
 		super(title, genre, creator, duration);
 		setYear(year);
 	}
+	public Movie() {
+	}
+	
 	public int getId() {
 		return id;
 	}
@@ -31,7 +35,7 @@ public class Movie extends Film implements IVisualizable{
 	
 	@Override
 	public String toString(boolean a) {
-		return "My movie [title=" + getTitle();
+		return "My movie [title=" + getTitle() + "]" +" [genre==" + getGenre() + "]" + " [year=" + getYear() + "]"+ " [isViewed=" + isViewed() + "]";
 	}
 	
 	@Override
@@ -46,8 +50,7 @@ public class Movie extends Film implements IVisualizable{
 			setTimeViewed(finishDate.getSeconds() - initDate.getSeconds());
 		} else {
 			setTimeViewed(0);
-		}
-		
+		}	
 	}
 	
 }

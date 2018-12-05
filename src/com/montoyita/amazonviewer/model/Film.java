@@ -17,6 +17,9 @@ public class Film {
 		this.duration = duration;
 	}
 	
+	public Film() {
+	}
+	
 	public String getTitle() {
 		return title;
 	}
@@ -47,8 +50,11 @@ public class Film {
 	public void setYear(short year) {
 		this.year = year;
 	}
-	public boolean isViewed() {
-		return viewed;
+	public String isViewed() {
+		if(viewed) {
+			return "vista";
+		}
+		return "nueva";
 	}
 	public void setViewed(boolean viewed) {
 		this.viewed = viewed;

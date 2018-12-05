@@ -15,6 +15,9 @@ public class Book extends Publication implements IVisualizable {
 		this.isbn = isbn;
 		this.authors = authors;
 	}
+	
+	public Book() {
+	}
 
 	public int getId() {
 		return id;

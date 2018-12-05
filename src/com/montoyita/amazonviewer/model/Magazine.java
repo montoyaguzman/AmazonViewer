@@ -11,6 +11,9 @@ public class Magazine extends Publication {
 		super(title, date, editorial, readed, timeReaded);
 		this.writer = writer;
 	}
+	
+	public Magazine() {
+	}
 
 	public int getId() {
 		return id;
